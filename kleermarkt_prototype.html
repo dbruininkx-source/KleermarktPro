@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KleerMarkt — tweedehands kleding</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#161616;font-family:Inter,system-ui,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}.top{position:sticky;top:0;z-index:20;background:#fffdf9eF;border-bottom:1px solid #e8e4dc;backdrop-filter:blur(14px)}.nav{max-width:1250px;margin:auto;padding:14px 22px;display:flex;gap:12px;align-items:center}.logo{font-size:24px;font-weight:950;letter-spacing:-1.5px;margin-right:auto}.logo i{font-style:normal;color:#888}.search{width:310px;padding:11px 15px;border:1px solid #ddd8cf;border-radius:13px;background:#f5f3ee}.navbtn,.primary,.outline{padding:11px 15px;border-radius:12px;font-weight:800}.primary{background:#111;color:#fff}.outline,.navbtn{background:#efede7}.hero{max-width:1250px;margin:auto;padding:58px 22px 38px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px}.hero h1{font-size:clamp(46px,7vw,86px);line-height:.91;letter-spacing:-5px;margin:10px 0 22px}.hero p{font-size:18px;color:#6e6a63;line-height:1.6;max-width:590px}.heroart{min-height:360px;border-radius:28px;background:#ddd7cb;position:relative;overflow:hidden}.hanger{position:absolute;inset:40px 30%;background:#242424;border-radius:130px 130px 35px 35px;transform:rotate(5deg)}.hanger:before{content:"";position:absolute;width:85px;height:85px;border:12px solid #242424;border-bottom:0;border-radius:50%;left:80px;top:-48px}.tag{position:absolute;left:22px;bottom:22px;background:#fff;padding:14px 17px;border-radius:14px;font-weight:900}.wrap{max-width:1250px;margin:auto;padding:0 22px 60px}.bar{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:25px 0 14px}.bar h2{margin:0;font-size:30px}.filters{display:flex;gap:8px;overflow:auto;padding-bottom:14px}.chip{padding:9px 15px;border-radius:99px;background:#fff;border:1px solid #dedad2;white-space:nowrap}.chip.active{background:#111;color:#fff}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:#fff;border:1px solid #e7e2da;border-radius:18px;overflow:hidden;transition:.18s}.card:hover{transform:translateY(-3px);box-shadow:0 12px 30px #0000000d}.photo{height:260px;display:flex;align-items:center;justify-content:center;font-size:72px;position:relative}.p0{background:#ded8cc}.p1{background:#d2d9d6}.p2{background:#e3c9bb}.p3{background:#d8d6e0}.heart{position:absolute;right:12px;top:12px;border-radius:50%;width:38px;height:38px;background:#fff;font-size:18px}.details{padding:14px}.muted{color:#77736d;font-size:12px}.name{font-weight:850;margin:4px 0}.price{font-weight:950;font-size:17px}.size{float:right;color:#777;font-size:12px}.section{margin-top:55px;background:#111;color:#fff;border-radius:26px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:28px}.section h2{font-size:36px;letter-spacing:-1px;margin:0 0 10px}.section p{color:#c8c8c8;line-height:1.6}.form{background:#fff;color:#111;border-radius:18px;padding:20px;display:grid;gap:11px}.form input,.form select,.form textarea{width:100%;border:1px solid #ddd8d0;border-radius:10px;padding:11px}.form textarea{min-height:80px;resize:vertical}.upload{border:2px dashed #ccc7bd;padding:18px;text-align:center;border-radius:12px;color:#777}.dash{display:none;background:#fff;border:1px solid #e5e0d8;border-radius:20px;padding:22px;margin-top:25px}.dash h2{margin-top:0}.tabs{display:flex;gap:8px;flex-wrap:wrap}.panel{display:none}.panel.show{display:block}.itemrow{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #eee}.chat{display:grid;grid-template-columns:220px 1fr;min-height:300px}.people{border-right:1px solid #ddd;padding-right:15px}.person{padding:12px;border-radius:10px;background:#f2f0eb;margin-bottom:7px}.messages{padding-left:20px}.bubble{max-width:70%;padding:11px 14px;border-radius:14px;background:#eee;margin:8px 0}.mine{margin-left:auto;background:#111;color:white}.modal{display:none;position:fixed;inset:0;background:#0008;z-index:50;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modalbox{background:#fff;border-radius:20px;padding:25px;max-width:520px;width:100%;max-height:90vh;overflow:auto}.close{float:right;border-radius:50%;width:34px;height:34px}.toast{position:fixed;right:20px;bottom:20px;background:#111;color:#fff;padding:13px 17px;border-radius:12px;display:none;z-index:70}.empty{padding:35px;text-align:center;color:#777;background:#fff;border-radius:16px;grid-column:1/-1}
+footer{text-align:center;color:#777;padding:35px;border-top:1px solid #e5e0d8}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.search{display:none}.section{grid-template-columns:1fr}}@media(max-width:550px){.grid{grid-template-columns:1fr 1fr}.photo{height:190px}.hero h1{letter-spacing:-3px}.nav{padding:11px}.logo{font-size:20px}.navbtn{display:none}.chat{grid-template-columns:1fr}.people{border-right:0}.messages{padding:0}}
+</style>
+</head>
+<body>
+<header class="top"><nav class="nav">
+<div class="logo">Kleer<i>Markt</i></div>
+<input class="search" id="search" placeholder="Zoek kleding, merk...">
+<button class="navbtn" onclick="openModal('account')">👤 Account</button>
+<button class="navbtn" onclick="openModal('chat')">💬 Berichten</button>
+<button class="primary" onclick="document.getElementById('sell').scrollIntoView()">+ Verkopen</button>
+</nav></header>
+
+<section class="hero">
+<div><div class="muted">DE TWEEDEHANDS KLEDINGMARKT</div><h1>Draag het.<br>Deel het.<br>Verkoop het.</h1><p>Ontdek unieke kleding van andere mensen of geef je eigen kast een tweede leven.</p><button class="primary" onclick="document.getElementById('market').scrollIntoView()">Ontdek kleding →</button></div>
+<div class="heroart"><div class="hanger"></div><div class="tag">VINTAGE · STREET · DAILY</div></div>
+</section>
+
+<main class="wrap" id="market">
+<div class="bar"><h2>Ontdek kleding</h2><span class="muted" id="count"></span></div>
+<div class="filters">
+<button class="chip active" data-cat="Alle">Alles</button><button class="chip" data-cat="T-shirts">T-shirts</button><button class="chip" data-cat="Broeken">Broeken</button><button class="chip" data-cat="Jassen">Jassen</button><button class="chip" data-cat="Sneakers">Sneakers</button><button class="chip" data-cat="Accessoires">Accessoires</button>
+</div>
+<div class="grid" id="grid"></div>
+
+<section class="section" id="sell">
+<div><div class="muted" style="color:#aaa">VERKOPEN</div><h2>Maak ruimte in je kast.</h2><p>Plaats een item met een foto, beschrijving, maat en prijs. In deze demo wordt je advertentie direct aan de marktplaats toegevoegd.</p><p>Een echte versie kan hierna gekoppeld worden aan een database, accounts, betalingen en veilige foto-opslag.</p></div>
+<form class="form" id="sellForm">
+<input id="itemName" required placeholder="Titel, bv. Nike hoodie">
+<select id="cat"><option>T-shirts</option><option>Broeken</option><option>Jassen</option><option>Sneakers</option><option>Accessoires</option></select>
+<input id="brand" placeholder="Merk">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><input id="itemPrice" required type="number" min="1" step=".01" placeholder="Prijs €"><input id="itemSize" required placeholder="Maat"></div>
+<textarea id="desc" placeholder="Beschrijving en conditie"></textarea>
+<label class="upload">📷 Foto kiezen <input id="photo" type="file" accept="image/*" hidden></label>
+<button class="primary">Advertentie plaatsen</button>
+</form></section>
+
+<section class="dash" id="dashboard">
+<h2>Mijn account</h2>
+<div class="tabs"><button class="chip active" onclick="tab('profile',this)">Profiel</button><button class="chip" onclick="tab('sales',this)">Mijn advertenties</button><button class="chip" onclick="tab('orders',this)">Bestellingen</button><button class="chip" onclick="tab('favorites',this)">Favorieten</button></div>
+<div id="profile" class="panel show"><p><b>Demo gebruiker</b><br><span class="muted">demo@kleermarkt.be</span></p><button class="primary" onclick="toast('Profiel opgeslagen')">Profiel opslaan</button></div>
+<div id="sales" class="panel"><div id="salesList"></div></div>
+<div id="orders" class="panel"><p class="muted">Nog geen bestellingen.</p></div>
+<div id="favorites" class="panel"><p class="muted">Klik op ♡ bij een item om het hier te bewaren.</p></div>
+</section>
+</main>
+<footer>KleerMarkt · Koop tweedehands · Verkoop eenvoudig · Demo 2026</footer>
+
+<div class="modal" id="account"><div class="modalbox"><button class="close" onclick="closeModal('account')">×</button><h2>Account</h2><p class="muted">Dit is een demo-login. Een echte login vereist een backend.</p><div class="form"><input id="loginName" placeholder="Naam"><input placeholder="E-mailadres" type="email"><input placeholder="Wachtwoord" type="password"><button class="primary" onclick="login()">Inloggen / registreren</button></div></div></div>
+
+<div class="modal" id="chat"><div class="modalbox"><button class="close" onclick="closeModal('chat')">×</button><h2>Berichten</h2><div class="chat"><div class="people"><div class="person"><b>Sam</b><br><span class="muted">Is de jas nog beschikbaar?</span></div><div class="person"><b>Alex</b><br><span class="muted">Nieuw bericht</span></div></div><div class="messages"><div class="bubble">Is de jas nog beschikbaar?</div><div class="bubble mine">Ja, hij is nog beschikbaar!</div><input style="width:100%;padding:11px;border:1px solid #ddd;border-radius:10px" placeholder="Schrijf een bericht..." onkeydown="if(event.key==='Enter'){toast('Bericht verzonden');this.value=''}"></div></div></div></div>
+
+<div class="modal" id="checkout"><div class="modalbox"><button class="close" onclick="closeModal('checkout')">×</button><h2>Checkout</h2><p id="checkoutText"></p><div class="form"><input placeholder="Naam"><input placeholder="Leveradres"><select><option>Bancontact (demo)</option><option>Kaart (demo)</option></select><button class="primary" onclick="pay()">Betalen</button></div><p class="muted">Betalingen zijn in deze demo niet echt actief.</p></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+let products=[
+{name:"Vintage bomber",brand:"Archive",price:68,size:"L",cat:"Jassen",emoji:"🧥",p:0,desc:"Mooie vintage jas in goede staat."},
+{name:"Wide leg jeans",brand:"Denim Lab",price:42,size:"S",cat:"Broeken",emoji:"👖",p:1,desc:"Relaxed fit jeans."},
+{name:"Oversized hoodie",brand:"Urban Basics",price:35,size:"M",cat:"T-shirts",emoji:"👕",p:2,desc:"Zachte oversized hoodie."},
+{name:"Retro sneakers",brand:"Runner Co.",price:55,size:"42",cat:"Sneakers",emoji:"👟",p:3,desc:"Gedragen maar netjes."},
+{name:"Leren crossbody",brand:"Noir",price:29,size:"One size",cat:"Accessoires",emoji:"👜",p:0,desc:"Compacte tas."}
+];
+let active="Alle", favorites=new Set();
+function render(){
+ let q=document.getElementById('search').value.toLowerCase();
+ let list=products.filter(x=>(active==='Alle'||x.cat===active)&&(x.name+' '+x.brand).toLowerCase().includes(q));
+ document.getElementById('count').textContent=list.length+' items';
+ document.getElementById('grid').innerHTML=list.map((x,i)=>`<article class="card"><div class="photo p${x.p}">${x.image?`<img src="${x.image}" style="width:100%;height:100%;object-fit:cover">`:x.emoji}<button class="heart" onclick="fav(${products.indexOf(x)})">${favorites.has(products.indexOf(x))?'♥':'♡'}</button></div><div class="details"><div class="muted">${x.brand||'Nieuwe verkoper'} · ${x.cat}</div><div class="name">${x.name}</div><div><span class="price">€${Number(x.price).toFixed(2)}</span><span class="size">maat ${x.size}</span></div><button class="outline" style="width:100%;margin-top:11px" onclick="buy(${products.indexOf(x)})">Bekijk & koop</button></div></article>`).join('')||'<div class="empty">Geen kleding gevonden.</div>';
+}
+function fav(i){favorites.has(i)?favorites.delete(i):favorites.add(i);render();toast(favorites.has(i)?'Toegevoegd aan favorieten':'Verwijderd uit favorieten')}
+function buy(i){let x=products[i];document.getElementById('checkoutText').textContent=x.name+' — €'+Number(x.price).toFixed(2);openModal('checkout')}
+function pay(){closeModal('checkout');toast('Demo-bestelling geplaatst 🎉')}
+function openModal(id){document.getElementById(id).classList.add('open')}
+function closeModal(id){document.getElementById(id).classList.remove('open')}
+function login(){closeModal('account');document.getElementById('dashboard').style.display='block';document.getElementById('dashboard').scrollIntoView({behavior:'smooth'});toast('Welkom op KleerMarkt!')}
+function tab(id,btn){document.querySelectorAll('.panel').forEach(x=>x.classList.remove('show'));document.getElementById(id).classList.add('show');document.querySelectorAll('.tabs .chip').forEach(x=>x.classList.remove('active'));btn.classList.add('active')}
+function toast(t){let x=document.getElementById('toast');x.textContent=t;x.style.display='block';setTimeout(()=>x.style.display='none',2200)}
+document.querySelectorAll('.chip[data-cat]').forEach(b=>b.onclick=()=>{document.querySelectorAll('.chip[data-cat]').forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.cat;render()});
+document.getElementById('search').oninput=render;
+document.getElementById('photo').onchange=e=>{let f=e.target.files[0];if(f){document.querySelector('.upload').firstChild.textContent='📷 '+f.name}}
+document.getElementById('sellForm').onsubmit=e=>{
+ e.preventDefault();
+ let f=document.getElementById('photo').files[0];
+ let add={name:itemName.value,brand:brand.value||'Nieuwe verkoper',price:itemPrice.value,size:itemSize.value,cat:cat.value,emoji:'👕',p:Math.floor(Math.random()*4),desc:desc.value};
+ if(f){let r=new FileReader();r.onload=()=>{add.image=r.result;products.unshift(add);finishSell()};r.readAsDataURL(f)}else{products.unshift(add);finishSell()}
+};
+function finishSell(){document.getElementById('sellForm').reset();render();toast('Je advertentie is geplaatst!');document.getElementById('market').scrollIntoView({behavior:'smooth'})}
+render();
+</script>
+</body>
+</html>
